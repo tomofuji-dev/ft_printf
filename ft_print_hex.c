@@ -6,11 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:10:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 15:44:43 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:41:09 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static unsigned int	count_digits_hex(unsigned long long n)
 {

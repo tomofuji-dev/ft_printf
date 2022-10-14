@@ -53,4 +53,6 @@ dkms.conf
 
 .vscode
 
-test*pft/
+test*
+pft/
+printfTester/

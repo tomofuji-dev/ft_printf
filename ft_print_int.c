@@ -6,11 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:30:30 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 15:44:15 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:41:03 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 static unsigned int	count_digits(unsigned int n)
 {

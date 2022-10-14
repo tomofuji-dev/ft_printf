@@ -6,11 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 08:43:04 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 09:01:48 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:40:53 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <unistd.h>
 
 int	ft_print_char(int c)

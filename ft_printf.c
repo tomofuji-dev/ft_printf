@@ -6,11 +6,11 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:58:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 16:22:47 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 17:24:44 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 #include <unistd.h>
 
@@ -70,6 +70,8 @@ int	ft_printf(const char *format, ...)
 	return (print_size);
 }
 
+// #include <stdio.h>
+// #include <limits.h>
 // int	main(void)
 // {
 // 	char	*pp;
@@ -78,6 +80,12 @@ int	ft_printf(const char *format, ...)
 // 	p = 'a';
 // 	pp = &p;
 
-// 	ft_printf("abc%cd%se%df%u%%\n", '1', "2345", -2147483648, 2147483647);
-// 	ft_printf("%p||%x||%X\n", pp, 2147483647, 2147483647);
+// 	int i = 0;
+// 	for (i = 0; i <= 10; i++)
+// 	{
+// 		ft_printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
+// 		printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
+// 	}
+// 	ft_printf("%d|%u|%p|%x|%X\n", INT_MIN, INT_MAX, pp, INT_MIN, INT_MAX);
+// 	printf("%d|%u|%p|%x|%X\n", INT_MIN, INT_MAX, pp, INT_MIN, INT_MAX);
 // }
