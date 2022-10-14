@@ -6,13 +6,12 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:58:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 15:47:01 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 16:22:47 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdarg.h>
-#include <stdio.h>
 #include <unistd.h>
 
 static int	print_plain(const char **format_p)
