@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 11:11:04 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 11:28:14 by tfujiwar         ###   ########.fr       */
+/*   Created: 2022/10/14 08:43:04 by tfujiwar          #+#    #+#             */
+/*   Updated: 2022/10/14 09:01:48 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <unistd.h>
 
-int	ft_print_char(int c);
-int	ft_print_string(const char *s);
-int	ft_print_percent(void);
-int	ft_print_unsigned_int(unsigned int ui);
-int	ft_print_int(int i);
+int	ft_print_char(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
 
-#endif	/* FT_LIBFT_H */
+int	ft_print_string(const char *s)
+{
+	int	print_size;
+
+	print_size = 0;
+	while (*s)
+	{
+		print_size += ft_print_char(*s);
+		s++;
+	}
+	return (print_size);
+}
+
+int	ft_print_percent(void)
+{
+	return (ft_print_char('%'));
+}

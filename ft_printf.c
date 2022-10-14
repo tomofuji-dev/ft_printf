@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:58:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 08:32:00 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 11:28:44 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,23 @@ static int	print_convert(const char **format_p, va_list ap)
 	int	print_size;
 
 	print_size = 0;
+	(*format_p)++;
 	if (**format_p == 'c')
-		printf_size += ft_print_char(va_arg(ap, int));
+		print_size += ft_print_char(va_arg(ap, int));
 	else if (**format_p == 's')
-		printf_size += ft_print_string(va_arg(ap, (const char *)));
-	else if (**format_p == 'p')
-		printf_size += ft_print_pointer(va_arg(ap, (void *)));
+		print_size += ft_print_string(va_arg(ap, const char *));
+	// else if (**format_p == 'p')
+	// 	print_size += ft_print_pointer(va_arg(ap, (void *)));
 	else if (**format_p == 'd' || **format_p == 'i')
-		printf_size += ft_print_int(va_arg(ap, int));
+		print_size += ft_print_int(va_arg(ap, int));
 	else if (**format_p == 'u')
-		printf_size += ft_print_unsigned_int(va_arg(ap, unsigned int));
-	else if (**format_p == 'x' || **format_p == 'X')
-		printf_size += ft_print_hex(va_arg(ap, unsigned int), **format_p);
+		print_size += ft_print_unsigned_int(va_arg(ap, unsigned int));
+	// else if (**format_p == 'x' || **format_p == 'X')
+	// 	print_size += ft_print_hex(va_arg(ap, unsigned int), **format_p);
 	else if (**format_p == '%')
-		printf_size += ft_print_percent();
-	return (0);
+		print_size += ft_print_percent();
+	(*format_p)++;
+	return (print_size);
 }
 
 int	ft_printf(const char *format, ...)
@@ -61,7 +63,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format != '%')
-			print_size += print_plain(&(format++));
+			print_size += print_plain(&format);
 		else
 			print_size += print_convert(&format, ap);
 	}
@@ -71,6 +73,5 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	ft_printf("abc%abc\n");
-	ft_printf("%ba\n");
+	ft_printf("abc%cd%se%df%u%%\n", '1', "2345", -2147483648, 2147483647);
 }
