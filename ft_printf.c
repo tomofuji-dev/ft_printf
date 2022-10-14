@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:58:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 11:28:44 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/14 15:47:01 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,14 @@ static int	print_convert(const char **format_p, va_list ap)
 		print_size += ft_print_char(va_arg(ap, int));
 	else if (**format_p == 's')
 		print_size += ft_print_string(va_arg(ap, const char *));
-	// else if (**format_p == 'p')
-	// 	print_size += ft_print_pointer(va_arg(ap, (void *)));
+	else if (**format_p == 'p')
+		print_size += ft_print_pointer(va_arg(ap, unsigned long long));
 	else if (**format_p == 'd' || **format_p == 'i')
 		print_size += ft_print_int(va_arg(ap, int));
 	else if (**format_p == 'u')
 		print_size += ft_print_unsigned_int(va_arg(ap, unsigned int));
-	// else if (**format_p == 'x' || **format_p == 'X')
-	// 	print_size += ft_print_hex(va_arg(ap, unsigned int), **format_p);
+	else if (**format_p == 'x' || **format_p == 'X')
+		print_size += ft_print_hex(va_arg(ap, unsigned int), **format_p);
 	else if (**format_p == '%')
 		print_size += ft_print_percent();
 	(*format_p)++;
@@ -71,7 +71,14 @@ int	ft_printf(const char *format, ...)
 	return (print_size);
 }
 
-int	main(void)
-{
-	ft_printf("abc%cd%se%df%u%%\n", '1', "2345", -2147483648, 2147483647);
-}
+// int	main(void)
+// {
+// 	char	*pp;
+// 	char	p;
+
+// 	p = 'a';
+// 	pp = &p;
+
+// 	ft_printf("abc%cd%se%df%u%%\n", '1', "2345", -2147483648, 2147483647);
+// 	ft_printf("%p||%x||%X\n", pp, 2147483647, 2147483647);
+// }
