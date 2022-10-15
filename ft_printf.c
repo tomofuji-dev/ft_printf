@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:58:19 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 17:24:44 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/16 08:28:05 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,12 @@ int	ft_printf(const char *format, ...)
 // 	p = 'a';
 // 	pp = &p;
 
-// 	int i = 0;
-// 	for (i = 0; i <= 10; i++)
+// 	for (int i = 1; i <= 100000; i *= 10)
 // 	{
-// 		ft_printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
-// 		printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
+// 		printf("%d\n", ft_printf("%d\n", i, i, pp, i, i));
+// 		ft_printf("%d\n", i, i, pp, i, i);
+// 		// ft_printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
+// 		// printf("%d|%u|%p|%x|%X\n", i, i, pp, i, i);
 // 	}
 // 	ft_printf("%d|%u|%p|%x|%X\n", INT_MIN, INT_MAX, pp, INT_MIN, INT_MAX);
 // 	printf("%d|%u|%p|%x|%X\n", INT_MIN, INT_MAX, pp, INT_MIN, INT_MAX);

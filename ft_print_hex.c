@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 12:10:25 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 16:41:09 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/16 08:27:14 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,12 @@ static int	ft_print_hex_unsigned_ll(unsigned long long ln, char flag)
 	unsigned int		count;
 	unsigned long long	power;
 	unsigned int		digit;
+	unsigned int		i;
 
-	if (flag == 'x')
-		ft_print_string("0x");
-	else if (flag == 'X')
-		ft_print_string("0X");
 	count = count_digits_hex(ln);
 	power = power_of_hex(count - 1);
-	while (count-- > 0)
+	i = 0;
+	while (i++ < count)
 	{
 		digit = (ln / power) % 16;
 		power /= 16;
@@ -61,12 +59,13 @@ static int	ft_print_hex_unsigned_ll(unsigned long long ln, char flag)
 				ft_print_char('A' + digit - 10);
 		}
 	}
-	return (count + 2);
+	return (count);
 }
 
 int	ft_print_pointer(unsigned long long ln)
 {
-	return (ft_print_hex_unsigned_ll(ln, 'x'));
+	ft_print_string("0x");
+	return (ft_print_hex_unsigned_ll(ln, 'x') + 2);
 }
 
 int	ft_print_hex(unsigned int n, char flag)

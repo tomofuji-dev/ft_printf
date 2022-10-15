@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 09:30:30 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 16:41:03 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/16 08:26:32 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ int	ft_print_unsigned_int(unsigned int un)
 	unsigned int	count;
 	unsigned int	power;
 	unsigned int	digit;
+	unsigned int	i;
 
 	count = count_digits(un);
 	power = power_of_ten(count - 1);
-	while (count-- > 0)
+	i = 0;
+	while (i++ < count)
 	{
 		digit = (un / power) % 10;
 		power /= 10;
