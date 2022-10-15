@@ -6,7 +6,7 @@
 /*   By: tfujiwar <tfujiwar@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 08:43:04 by tfujiwar          #+#    #+#             */
-/*   Updated: 2022/10/14 16:40:53 by tfujiwar         ###   ########.fr       */
+/*   Updated: 2022/10/16 08:37:05 by tfujiwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_print_string(const char *s)
 	int	print_size;
 
 	print_size = 0;
+	if (!s)
+		return (ft_print_string("(null)"));
 	while (*s)
 	{
 		print_size += ft_print_char(*s);
